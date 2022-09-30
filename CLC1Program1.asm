@@ -33,7 +33,7 @@ main:
 	#Get and save number 2
 	li $v0, 5		#intake ingeter
 	syscall			#execute
-	move $t1, $v0	#move integer from a0 to temp reg 1
+	move $t1, $v0		#move integer from a0 to temp reg 1
 
 	#initialize registers
 	li $t2, 0		#initialize sum
@@ -43,12 +43,12 @@ main:
 	
 	#load and print sum msg	
 	li $v0, 4		#print string on syscall
-	la $a0, sumMsg	#load sumMsg into a0
+	la $a0, sumMsg		#load sumMsg into a0
 	syscall			#execute
 
 	#load and print sum (integer)
 	li $v0, 1		#print integer on syscall
-	move $a0, $t2	#load sum (in $t2) into a0
+	move $a0, $t2		#load sum (in $t2) into a0
 	syscall			#execute
 
 	#Print newline

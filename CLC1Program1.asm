@@ -23,7 +23,7 @@ main:
 	#Get and save number 1
 	li $v0, 5		#intake ingeter
 	syscall			#execute
-	move $t0, $v0	#move integer from a0 to temp reg 0
+	move $t0, $v0		#move integer from a0 to temp reg 0
 
 	#Ask user for number 2
 	li $v0, 4		#print string on syscall

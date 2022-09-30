@@ -18,46 +18,46 @@
 .globl main
 main:
 	#Print message 1
-	li $v0, 4					#prepare to load string into syscall
+	li $v0, 4				#prepare to load string into syscall
 	la $a0, msg1				#load msg1 into $a0
-	syscall						#execute
+	syscall					#execute
 
 	#Read first integer
-	li $v0, 5					#read the first integer input
-	syscall						#execute
+	li $v0, 5				#read the first integer input
+	syscall					#execute
 	move $t0, $v0				#move integer into reg $t0
 	
 	#Print message 2
-	li $v0, 4					#prepare to load string into syscall
+	li $v0, 4				#prepare to load string into syscall
 	la $a0, msg2				#load msg2 into $a0
-	syscall						#execute
+	syscall					#execute
 	
 	#Read second integer
-	li $v0, 5					#read the second integer input
-	syscall						#execute
+	li $v0, 5				#read the second integer input
+	syscall					#execute
 	move $t1, $v0				#move integer into reg $t1
 	
 	#Print sum message
-	li $v0, 4					#prepare to load string into syscall
+	li $v0, 4				#prepare to load string into syscall
 	la $a0, msg3				#load msg3 into $a0
-	syscall						#execute
+	syscall					#execute
 
 	#branch if $t0 greater than $t1
-	bgt $t0, $t1, print_num		#jumps to print_num if $t0 is larger
+	bgt $t0, $t1, print_num			#jumps to print_num if $t0 is larger
 
 	#if $t0 is not larger, print $t1 and exit
-	li $v0, 1					#prepare to load integer into syscall
+	li $v0, 1				#prepare to load integer into syscall
 	move $a0, $t1				#load $t1 into $a0
-	syscall						#execute
+	syscall					#execute
 	
-	li $v0, 10					#system call for exit
-	syscall						#execute
+	li $v0, 10				#system call for exit
+	syscall					#execute
 #--------------------------------------------
 	#print num for if $t0 is bigger
 	print_num:
-	li $v0, 1					#prepare to load integer into syscall
+	li $v0, 1				#prepare to load integer into syscall
 	move $a0, $t0				#load the larger int number ($t0) into $a0
-	syscall						#execute
+	syscall					#execute
 	
-	li $v0, 10					# system call for exit
-	syscall						#execute
+	li $v0, 10				#system call for exit
+	syscall					#execute
